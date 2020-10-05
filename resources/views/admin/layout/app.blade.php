@@ -27,7 +27,7 @@
     </main>
 @endguest
 
-
+@include('sweetalert::alert')
 
 <!-- Essential javascripts for application to work-->
 <script src="{{ asset('backend/js/jquery-3.3.1.min.js') }}"></script>
@@ -37,9 +37,10 @@
 <!-- The javascript plugin to display page loading on top-->
 <script src="{{ asset('backend/js/plugins/pace.min.js') }}"></script>
 <!-- Page specific javascripts-->
-<!-- Google analytics script-->
-<script type="text/javascript">
+<!-- Data table plugin-->
+<script type="text/javascript" src="{{ asset('backend/js/plugins/jquery.dataTables.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('backend/js/plugins/dataTables.bootstrap.min.js') }}"></script>
+<script type="text/javascript">$('#datatable').DataTable();</script>
 
-</script>
 </body>
 </html>

@@ -7,8 +7,8 @@
             <p>All Website Details Here</p>
         </div>
         <ul class="app-breadcrumb breadcrumb">
-            <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-            <li class="breadcrumb-item"><a href="#">Blank Page</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}"><i class="fa fa-home fa-lg"></i></a></li>
+            <li class="breadcrumb-item">Dashboard</li>
         </ul>
     </div>
     <div class="row">
@@ -31,7 +31,7 @@
         <div class="col-md-6 col-lg-3">
             <div class="widget-small warning coloured-icon"><i class="icon fa fa-files-o fa-3x"></i>
                 <div class="info">
-                    <h4>Uploades</h4>
+                    <h4>Uploads</h4>
                     <p><b>10</b></p>
                 </div>
             </div>
