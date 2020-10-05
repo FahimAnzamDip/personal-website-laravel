@@ -33,9 +33,11 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        $title = "Dashboard - Add Category";
+        $title = "Dashboard - Create Category";
 
-        return view('admin.pages.categories.create');
+        return view('admin.pages.categories.create', [
+            'title' => $title
+        ]);
     }
 
     /**
@@ -67,9 +69,13 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
+        $title = "Dashboard - Edit Category";
         $category = Category::find($id);
 
-        return view('admin.pages.categories.edit', ['category' => $category]);
+        return view('admin.pages.categories.edit', [
+            'category' => $category,
+            'title' => $title
+        ]);
     }
 
     /**

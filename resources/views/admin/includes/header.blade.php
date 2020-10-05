@@ -3,6 +3,7 @@
                                     aria-label="Hide Sidebar"></a>
     <!-- Navbar Right Menu-->
     <ul class="app-nav">
+        <li><a href="{{ route('home.page') }}" class="app-nav__item"><i class="far fa-eye fa-lg mr-2"></i> <strong>View Website</strong></a></li>
         <!--<li class="app-search">
             <input class="app-search__input" type="search" placeholder="Search">
             <button class="app-search__button"><i class="fa fa-search"></i></button>
@@ -73,7 +74,7 @@
         <!-- User Menu-->
         <li class="dropdown">
             <a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu">
-                <i class="fa fa-user fa-lg pr-1"></i> {{ Auth::user()->name }}
+                <i class="fa fa-user fa-lg pr-1"></i> <strong>{{ Auth::user()->name }}</strong>
             </a>
             <ul class="dropdown-menu settings-menu dropdown-menu-right">
                 <li><a class="dropdown-item" href="#"><i class="fa fa-cog fa-lg"></i> Settings</a></li>

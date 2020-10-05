@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Service;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ServicesController extends Controller
@@ -14,7 +16,13 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        //
+        $title = "Dashboard - Services";
+        $services = Service::latest()->get();
+
+        return view('admin.pages.services.index', [
+            'title' => $title,
+            'services' => $services
+        ]);
     }
 
     /**
@@ -24,7 +32,11 @@ class ServicesController extends Controller
      */
     public function create()
     {
-        //
+        $title = "Dashboard - Create Service";
+
+        return view('admin.pages.services.create', [
+            'title' => $title
+        ]);
     }
 
     /**
@@ -35,7 +47,21 @@ class ServicesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'service_title' => 'required',
+            'service_icon' => 'required',
+            'service_description' => 'required'
+        ]);
+
+        Service::create([
+            'service_name' => $request->service_title,
+            'service_icon' => $request->service_icon,
+            'service_description' => $request->service_description,
+            'created_at' => Carbon::now()
+        ]);
+        toast('Service Created!', 'success');
+
+        return redirect()->route('services.index');
     }
 
     /**
@@ -46,7 +72,13 @@ class ServicesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $title = "Dashboard - Edit Service";
+        $service = Service::find($id);
+
+        return view('admin.pages.services.edit', [
+            'title' => $title,
+            'service' => $service
+        ]);
     }
 
     /**
@@ -58,7 +90,20 @@ class ServicesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'service_title' => 'required',
+            'service_icon' => 'required',
+            'service_description' => 'required'
+        ]);
+
+        Service::find($id)->update([
+            'service_name' => $request->service_title,
+            'service_icon' => $request->service_icon,
+            'service_description' => $request->service_description
+        ]);
+        toast('Service Updated!', 'success');
+
+        return redirect()->route('services.index');
     }
 
     /**
@@ -69,6 +114,9 @@ class ServicesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Service::find($id)->delete();
+        toast('Service Deleted!', 'warning');
+
+        return redirect()->route('services.index');
     }
 }

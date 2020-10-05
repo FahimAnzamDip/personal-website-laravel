@@ -16,12 +16,12 @@
         <div class="col-md-6">
             <div class="tile">
                 @include('admin.includes.alert')
-                <h3 class="tile-title">Add Category <span class="text-danger">*</span></h3>
+                <h3 class="tile-title">Add Category</h3>
                 <form action="{{ route('categories.store') }}" method="POST">
                     @csrf
                     <div class="tile-body">
                             <div class="form-group">
-                                <label class="control-label" for="category_name">Name</label>
+                                <label class="control-label" for="category_name">Name  <span class="text-danger">*</span></label>
                                 <input id="category_name" class="form-control" type="text" placeholder="Enter category name" name="category_name" value="{{ old('category_name') }}">
                             </div>
                     </div>

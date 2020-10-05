@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -11,11 +12,13 @@ class PagesController extends Controller
     public function home() {
         $title = "Fahim Anzam";
         $categories = Category::all();
+        $services = Service::all();
 
         return view('frontend.home',
             [
                 'title' => $title,
-                'categories' => $categories
+                'categories' => $categories,
+                'services' => $services
             ]);
     }
 
