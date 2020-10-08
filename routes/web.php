@@ -26,7 +26,13 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function () {
 
     Route::get('/dashboard', 'DashboardController@index')->name('admin.dashboard');
     Route::get('/admin/logout', 'DashboardController@logout')->name('admin.logout');
+
     Route::resource('categories', 'CategoriesController')->except('show');
+
     Route::resource('services', 'ServicesController')->except('show');
 
+    Route::resource('projects', 'ProjectsController')->except('show');
+
+    Route::get('/profile', 'ProfileController@index')->name('profile');
+    Route::post('/profile/update', 'ProfileController@update')->name('profile.update');
 });

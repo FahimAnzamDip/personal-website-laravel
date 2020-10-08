@@ -9,19 +9,19 @@ use Illuminate\Support\Carbon;
 
 class CategoriesController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
         $title = "Dashboard - Categories";
         $categories = Category::latest()->get();
 
         return view('admin.pages.categories.index',
             [
-                'title' => $title,
+                'title'      => $title,
                 'categories' => $categories
             ]);
     }
@@ -31,8 +31,7 @@ class CategoriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         $title = "Dashboard - Create Category";
 
         return view('admin.pages.categories.create', [
@@ -43,18 +42,17 @@ class CategoriesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         $request->validate([
             'category_name' => 'required'
         ]);
 
         Category::create([
             'category_name' => $request->category_name,
-            'created_at' => Carbon::now()
+            'created_at'    => Carbon::now()
         ]);
         toast('Category Created!', 'success');
 
@@ -64,29 +62,27 @@ class CategoriesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id) {
         $title = "Dashboard - Edit Category";
         $category = Category::find($id);
 
         return view('admin.pages.categories.edit', [
             'category' => $category,
-            'title' => $title
+            'title'    => $title
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         $request->validate([
             'category_name' => 'required'
         ]);
@@ -102,11 +98,10 @@ class CategoriesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
         Category::find($id)->delete();
         toast('Category Deleted!', 'warning');
 

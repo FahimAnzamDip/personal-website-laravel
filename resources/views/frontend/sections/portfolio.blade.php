@@ -20,140 +20,33 @@
         </div>
 
         <div class="row justify-content-center portfolio-wrapper">
-
-            <div class="gutter-sizer col-lg-4 col-md-6 col-sm-6 application">
-                <div class="card single-portfolio text-center">
-                    <div class="portfolio-image">
-                        <img class="img-fluid" src="{{ asset('frontend') }}/img/portfolio-img-1_low.png" alt="portfolio_image">
-                    </div>
-                    <div class="card-body portfolio-details">
-                        <h3 class="portfolio-title">Zapper</h3>
-                        <p class="portfolio-text">
-                            It's a ecommerce website. Made with wordpress.
-                        </p>
-                        <div class="portfolio-btns d-flex justify-content-center">
-                            <a href="javascript:void(0)" class="portfolio-btn">
-                                <i class="far fa-brackets-curly"></i> Code
-                            </a>
-                            <a href="javascript:void(0)" class="portfolio-btn">
-                                <i class="far fa-link"></i> Live
-                            </a>
+            @foreach($projects as $project)
+                <div class="gutter-sizer col-lg-4 col-md-6 col-sm-6 {{ strtolower($project->category->category_name) }}">
+                    <div class="card single-portfolio text-center">
+                        <div class="portfolio-image">
+                            <img class="img-fluid" src="{{ asset('storage/project_images').'/'.$project->project_image }}" alt="portfolio image">
+                        </div>
+                        <div class="card-body portfolio-details">
+                            <h3 class="portfolio-title">{{ $project->project_name }}</h3>
+                            <p class="portfolio-text">
+                                {{ $project->project_description }}
+                            </p>
+                            <div class="portfolio-btns d-flex justify-content-center">
+                                @if($project->code_link)
+                                    <a href="{{ $project->code_link }}" class="portfolio-btn">
+                                        <i class="far fa-brackets-curly"></i> Code
+                                    </a>
+                                @endif
+                                @if($project->live_link)
+                                    <a href="{{ $project->live_link }}" class="portfolio-btn">
+                                        <i class="far fa-link"></i> Live
+                                    </a>
+                                @endif
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="gutter-sizer col-lg-4 col-md-6 col-sm-6 corporate">
-                <div class="card single-portfolio text-center">
-                    <div class="portfolio-image">
-                        <img class="img-fluid" src="{{ asset('frontend') }}/img/portfolio-img-2_low.png" alt="portfolio_image">
-                    </div>
-                    <div class="card-body portfolio-details">
-                        <h3 class="portfolio-title">Lixer</h3>
-                        <p class="portfolio-text">
-                            It's a blog website. Made with Laravel php framework.
-                        </p>
-                        <div class="portfolio-btns d-flex justify-content-center">
-                            <a href="javascript:void(0)" class="portfolio-btn">
-                                <i class="far fa-brackets-curly"></i> Code
-                            </a>
-                            <a href="javascript:void(0)" class="portfolio-btn">
-                                <i class="far fa-link"></i> Live
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="gutter-sizer col-lg-4 col-md-6 col-sm-6 creative">
-                <div class="card single-portfolio text-center">
-                    <div class="portfolio-image">
-                        <img class="img-fluid" src="{{ asset('frontend') }}/img/portfolio-img-3_low.png" alt="portfolio_image">
-                    </div>
-                    <div class="card-body portfolio-details">
-                        <h3 class="portfolio-title">Lalvai</h3>
-                        <p class="portfolio-text">
-                            It's a corporate landing page. Made with Bootstrap, Html & Css.
-                        </p>
-                        <div class="portfolio-btns d-flex justify-content-center">
-                            <a href="javascript:void(0)" class="portfolio-btn">
-                                <i class="far fa-brackets-curly"></i> Code
-                            </a>
-                            <a href="javascript:void(0)" class="portfolio-btn">
-                                <i class="far fa-link"></i> Live
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="gutter-sizer col-lg-4 col-md-6 col-sm-6 application">
-                <div class="card single-portfolio text-center">
-                    <div class="portfolio-image">
-                        <img class="img-fluid" src="{{ asset('frontend') }}/img/portfolio-img-4_low.png" alt="portfolio_image">
-                    </div>
-                    <div class="card-body portfolio-details">
-                        <h3 class="portfolio-title">nCovid</h3>
-                        <p class="portfolio-text">
-                            It's a ecommerce website. Made with wordpress.
-                        </p>
-                        <div class="portfolio-btns d-flex justify-content-center">
-                            <a href="javascript:void(0)" class="portfolio-btn">
-                                <i class="far fa-brackets-curly"></i> Code
-                            </a>
-                            <a href="javascript:void(0)" class="portfolio-btn">
-                                <i class="far fa-link"></i> Live
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="gutter-sizer col-lg-4 col-md-6 col-sm-6 corporate">
-                <div class="card single-portfolio text-center">
-                    <div class="portfolio-image">
-                        <img class="img-fluid" src="{{ asset('frontend') }}/img/portfolio-img-5_low.png" alt="portfolio_image">
-                    </div>
-                    <div class="card-body portfolio-details">
-                        <h3 class="portfolio-title">Multikart</h3>
-                        <p class="portfolio-text">
-                            It's a blog website. Made with Laravel php framework.
-                        </p>
-                        <div class="portfolio-btns d-flex justify-content-center">
-                            <a href="javascript:void(0)" class="portfolio-btn">
-                                <i class="far fa-brackets-curly"></i> Code
-                            </a>
-                            <a href="javascript:void(0)" class="portfolio-btn">
-                                <i class="far fa-link"></i> Live
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="gutter-sizer col-lg-4 col-md-6 col-sm-6 creative">
-                <div class="card single-portfolio text-center">
-                    <div class="portfolio-image">
-                        <img class="img-fluid" src="{{ asset('frontend') }}/img/portfolio-img-6_low.png" alt="portfolio_image">
-                    </div>
-                    <div class="card-body portfolio-details">
-                        <h3 class="portfolio-title">Cuba</h3>
-                        <p class="portfolio-text">
-                            It's a corporate landing page. Made with Bootstrap, Html & Css.
-                        </p>
-                        <div class="portfolio-btns d-flex justify-content-center">
-                            <a href="javascript:void(0)" class="portfolio-btn">
-                                <i class="far fa-brackets-curly"></i> Code
-                            </a>
-                            <a href="javascript:void(0)" class="portfolio-btn">
-                                <i class="far fa-link"></i> Live
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
+            @endforeach
         </div>
         <div class="row">
             <div class="col-12 d-flex justify-content-center">

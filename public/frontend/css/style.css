@@ -10028,7 +10028,7 @@ svg {
 
 @media (max-width: 375px) {
   #header .parallax {
-    display: none;
+    opacity: 0.2;
   }
 }
 

@@ -43,15 +43,15 @@
                                         <td>{{ $service->service_description }}</td>
                                         <td>{{ $service->created_at->format('d-M-Y h:i a') }}</td>
                                         <td class="d-flex justify-content-center">
-                                            <a class="btn btn-info btn-sm mr-2" href="{{ route('services.edit', $service->id) }}">
-                                                Edit
+                                            <a class="btn btn-outline-info btn-sm mr-2" href="{{ route('services.edit', $service->id) }}">
+                                                <i class="far fa-edit"></i>
                                             </a>
                                             <form action="{{ route('services.destroy', $service->id) }}" method="POST">
                                                 @csrf
                                                 @method('delete')
 
-                                                <button class="btn btn-danger btn-sm" type="submit">
-                                                    Delete
+                                                <button class="btn btn-outline-danger btn-sm" type="submit">
+                                                    <i class="far fa-trash"></i>
                                                 </button>
                                             </form>
                                         </td>

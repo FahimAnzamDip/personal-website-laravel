@@ -11,7 +11,13 @@
     <ul class="app-menu">
         <li>
             <a class="app-menu__item {{ (request()->is('dashboard*')) ? 'active' : '' }}" href="{{ route('admin.dashboard') }}">
-                <i class="far fa-chart-network app-menu__icon"></i><span class="app-menu__label">Dashboard</span>
+                <i class="far fa-chart-bar app-menu__icon"></i><span class="app-menu__label">Dashboard</span>
+            </a>
+        </li>
+
+        <li>
+            <a class="app-menu__item {{ (request()->is('profile*')) ? 'active' : '' }}" href="{{ route('profile') }}">
+                <i class="far fa-user-cog app-menu__icon"></i><span class="app-menu__label">Profile</span>
             </a>
         </li>
 
@@ -24,6 +30,12 @@
         <li>
             <a class="app-menu__item {{ (request()->is('services*')) ? 'active' : '' }}" href="{{ route('services.index') }}">
                 <i class="far fa-briefcase app-menu__icon"></i><span class="app-menu__label">Services</span>
+            </a>
+        </li>
+
+        <li>
+            <a class="app-menu__item {{ (request()->is('projects*')) ? 'active' : '' }}" href="{{ route('projects.index') }}">
+                <i class="far fa-file-code app-menu__icon"></i><span class="app-menu__label">Projects</span>
             </a>
         </li>
     </ul>

@@ -9,18 +9,18 @@ use Illuminate\Http\Request;
 
 class ServicesController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
         $title = "Dashboard - Services";
         $services = Service::latest()->get();
 
         return view('admin.pages.services.index', [
-            'title' => $title,
+            'title'    => $title,
             'services' => $services
         ]);
     }
@@ -30,8 +30,7 @@ class ServicesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         $title = "Dashboard - Create Service";
 
         return view('admin.pages.services.create', [
@@ -42,22 +41,21 @@ class ServicesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         $request->validate([
-            'service_title' => 'required',
-            'service_icon' => 'required',
+            'service_title'       => 'required',
+            'service_icon'        => 'required',
             'service_description' => 'required'
         ]);
 
         Service::create([
-            'service_name' => $request->service_title,
-            'service_icon' => $request->service_icon,
+            'service_name'        => $request->service_title,
+            'service_icon'        => $request->service_icon,
             'service_description' => $request->service_description,
-            'created_at' => Carbon::now()
+            'created_at'          => Carbon::now()
         ]);
         toast('Service Created!', 'success');
 
@@ -67,16 +65,15 @@ class ServicesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id) {
         $title = "Dashboard - Edit Service";
         $service = Service::find($id);
 
         return view('admin.pages.services.edit', [
-            'title' => $title,
+            'title'   => $title,
             'service' => $service
         ]);
     }
@@ -84,21 +81,20 @@ class ServicesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         $request->validate([
-            'service_title' => 'required',
-            'service_icon' => 'required',
+            'service_title'       => 'required',
+            'service_icon'        => 'required',
             'service_description' => 'required'
         ]);
 
         Service::find($id)->update([
-            'service_name' => $request->service_title,
-            'service_icon' => $request->service_icon,
+            'service_name'        => $request->service_title,
+            'service_icon'        => $request->service_icon,
             'service_description' => $request->service_description
         ]);
         toast('Service Updated!', 'success');
@@ -109,11 +105,10 @@ class ServicesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
         Service::find($id)->delete();
         toast('Service Deleted!', 'warning');
 

@@ -39,15 +39,15 @@
                                         <td>{{ $category->category_name }}</td>
                                         <td>{{ $category->created_at->format('d-M-Y h:i a') }}</td>
                                         <td class="d-flex justify-content-center">
-                                            <a class="btn btn-info btn-sm mr-2" href="{{ route('categories.edit', $category->id) }}">
-                                                Edit
+                                            <a class="btn btn-outline-info btn-sm mr-2" href="{{ route('categories.edit', $category->id) }}">
+                                                <i class="far fa-edit"></i>
                                             </a>
                                             <form action="{{ route('categories.destroy', $category->id) }}" method="POST">
                                                 @csrf
                                                 @method('delete')
 
-                                                <button class="btn btn-danger btn-sm" type="submit">
-                                                    Delete
+                                                <button class="btn btn-outline-danger btn-sm" type="submit">
+                                                    <i class="far fa-trash"></i>
                                                 </button>
                                             </form>
                                         </td>
