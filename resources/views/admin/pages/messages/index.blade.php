@@ -23,6 +23,7 @@
                                 <th>Email</th>
                                 <th>Subject</th>
                                 <th>Message</th>
+                                <th>Received at</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -33,6 +34,13 @@
                                     <td>{{ $message->guest_email }}</td>
                                     <td>{{ Str::words($message->guest_subject, 5, '...') }}</td>
                                     <td>{{ Str::words($message->guest_message, 10, '...') }}</td>
+                                    <td>
+                                        @if($message->created_at->diffInDays() < 1)
+                                            {{ $message->created_at->diffForHumans() }}
+                                        @else
+                                            {{ $message->created_at->format('d-M-Y h:i a') }}
+                                        @endif
+                                    </td>
                                     <td class="d-flex justify-content-center">
                                         <a class="btn btn-outline-info btn-sm mr-2" href="{{ route('messages.show', $message->id) }}">
                                             <i class="far fa-external-link"></i>

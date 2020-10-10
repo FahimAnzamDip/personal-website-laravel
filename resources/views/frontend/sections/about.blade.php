@@ -51,18 +51,27 @@
 
                     <div class="tab-pane fade" id="experience">
                         <div class="row">
+                            @foreach($experiences as $experience)
                             <div class="col-lg-10 col-md-12 col-sm-12">
                                 <div class="card experience mb-4">
                                     <div class="card-body experience_body">
                                         <div class="experience_details">
-                                            <h4>Freelancer</h4>
-                                            <span class="badge badge-primary mb-3">2020 - Running</span>
-                                            <p>I am new at Freelaning. But getting experience day by day.</p>
+                                            <h4>{{ $experience->experience_title }}</h4>
+                                            <span class="badge badge-primary mb-3">
+                                                {{ date('F Y', strtotime($experience->starting_date)) }} -
+                                                @if($experience->ending_date)
+                                                    {{ date('F Y', strtotime($experience->ending_date)) }}
+                                                @else
+                                                    {{ 'Running' }}
+                                                @endif
+                                            </span>
+                                            <p>{{ $experience->experience_description }}</p>
                                         </div>
                                         <span class="line"></span>
                                     </div>
                                 </div>
                             </div>
+                            @endforeach
                         </div>
                     </div>
 

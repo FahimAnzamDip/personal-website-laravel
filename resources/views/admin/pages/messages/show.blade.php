@@ -9,7 +9,12 @@
         <ul class="app-breadcrumb breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('home.page') }}"><i class="fa fa-home fa-lg"></i></a></li>
             <li class="breadcrumb-item"><a href="{{ route('messages.index') }}">Mailbox</a></li>
-            <li class="breadcrumb-item">Show</li>
+            <li class="breadcrumb-item">Show -
+                @if($message->created_at->diffInDays() < 1)
+                    {{ $message->created_at->diffForHumans() }}
+                @else
+                    {{ $message->created_at->format('d-M-Y h:i a') }}
+                @endif</li>
         </ul>
     </div>
     <div class="row justify-content-center">

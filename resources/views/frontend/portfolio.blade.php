@@ -1,7 +1,7 @@
 @extends('frontend.layout.frontapp')
 
 <!--Nav Section Start-->
-<section id="nav_bar">
+<section id="nav_bar" style="display: none;">
     <nav id="main_nav" class="navbar navbar-expand-md navbar-light">
         <div class="container">
             <a class="navbar-brand" href="{{ route('home.page') }}"><img width="200" class="img-fluid" src="{{ asset('frontend') }}/img/logo.png" alt=""></a>

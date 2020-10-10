@@ -15,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 //Frontend Routes
 Route::group(['namespace' => 'Frontend'], function () {
-
+    //Home Page
     Route::get('/', 'PagesController@home')->name('home.page');
-
+    //Portfolio Page
     Route::get('/portfolio', 'PagesController@portfolio')->name('portfolio.page');
-
+    //Messages
     Route::get('messages/{id}/read', 'MessagesController@read')->name('messages.read');
     Route::resource('messages', 'MessagesController')->except(['update', 'edit', 'create']);
 
@@ -27,18 +27,24 @@ Route::group(['namespace' => 'Frontend'], function () {
 
 //Backend Routes
 Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function () {
-
+    //Dashboard
     Route::get('/dashboard', 'DashboardController@index')->name('admin.dashboard');
     Route::get('/admin/logout', 'DashboardController@logout')->name('admin.logout');
-
+    //Categories
     Route::resource('categories', 'CategoriesController')->except('show');
-
+    //Services
     Route::resource('services', 'ServicesController')->except('show');
-
+    //Projects
     Route::resource('projects', 'ProjectsController')->except('show');
-
+    //Profile
     Route::get('/profile', 'ProfileController@index')->name('profile');
     Route::post('/profile/update', 'ProfileController@update')->name('profile.update');
-
+    //Skills
     Route::resource('skills', 'SkillsController')->except('show');
+    //Experiences
+    Route::resource('experiences', 'ExperiencesController')->except('show');
+    //Educations
+    Route::resource('educations', 'EducationsController')->except('show');
+    //Stats
+    Route::resource('stats', 'StatsController')->except('show');
 });

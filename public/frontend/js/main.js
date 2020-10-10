@@ -2,6 +2,7 @@ $(window).on('load', function () {
     /*=========================================================================
         Preloader
     =========================================================================*/
+    document.getElementById('nav_bar').style.display = "block";
     $('.loader').fadeOut('slow');
 
 

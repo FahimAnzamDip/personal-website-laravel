@@ -32,7 +32,7 @@
 
         <li>
             <a class="app-menu__item {{ (request()->is('services*')) ? 'active' : '' }}" href="{{ route('services.index') }}">
-                <i class="far fa-briefcase app-menu__icon"></i><span class="app-menu__label">Services</span>
+                <i class="far fa-ruler-triangle app-menu__icon"></i><span class="app-menu__label">Services</span>
             </a>
         </li>
 
@@ -51,6 +51,30 @@
         <li>
             <a class="app-menu__item {{ (request()->is('skills*')) ? 'active' : '' }}" href="{{ route('skills.index') }}">
                 <i class="far fa-code app-menu__icon"></i><span class="app-menu__label">Skills</span>
+            </a>
+        </li>
+
+        <li>
+            <a class="app-menu__item {{ (request()->is('experiences*')) ? 'active' : '' }}" href="{{ route('experiences.index') }}">
+                <i class="far fa-briefcase app-menu__icon"></i><span class="app-menu__label">Experiences</span>
+            </a>
+        </li>
+
+        <li>
+            <a class="app-menu__item {{ (request()->is('educations*')) ? 'active' : '' }}" href="{{ route('educations.index') }}">
+                <i class="far fa-book app-menu__icon"></i><span class="app-menu__label">Educations</span>
+            </a>
+        </li>
+
+        <li>
+            <a class="app-menu__item {{ (request()->is('stats*')) ? 'active' : '' }}" href="{{ route('stats.index') }}">
+                <i class="far fa-star app-menu__icon"></i><span class="app-menu__label">Stats</span>
+            </a>
+        </li>
+
+        <li>
+            <a class="app-menu__item {{ (request()->is('settings*')) ? 'active' : '' }}" href="">
+                <i class="far fa-cog app-menu__icon"></i><span class="app-menu__label">Settings</span>
             </a>
         </li>
     </ul>

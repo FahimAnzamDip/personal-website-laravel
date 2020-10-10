@@ -24,7 +24,7 @@
             <div class="widget-small info coloured-icon"><i class="icon far fa-mailbox fa-3x"></i>
                 <div class="info">
                     <h4>Messages</h4>
-                    <p><b>Total: {{ \App\Models\Message::where('read', 0)->count() }}</b></p>
+                    <p><b>New: {{ \App\Models\Message::where('read', 0)->count() }}</b></p>
                 </div>
             </div>
         </div>
