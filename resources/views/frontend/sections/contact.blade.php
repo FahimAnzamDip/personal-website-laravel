@@ -11,7 +11,7 @@
                 <div class="contact_note">
                     <div class="contact_note_top mb-5">
                         <h4>Quick Contact</h4>
-                        <p>Don't like forms? Send me an <a href="mailto:dfahimanzam@gmail.com?subject=I want to discuss" target="_blank"  class="mail_text">email</a>. <i class="far fa-smile-beam"></i></p>
+                        <p>Don't like forms? Send me an <a href="mailto:{{ $profile->email }}?subject=I want to discuss" target="_blank"  class="mail_text">email</a>. <i class="far fa-smile-beam"></i></p>
                     </div>
 
                     <div class="contact_note_bottom mb-5">
@@ -19,7 +19,7 @@
                             <span class="text-primary mr-3"><i class="fad fa-envelope-open"></i></span>
                             <div>
                                 <h6>Email</h6>
-                                <p>dfahimanzam@gmail.com</p>
+                                <p>{{ $profile->email }}</p>
                             </div>
                         </div>
 
@@ -27,42 +27,52 @@
                             <span class="text-primary mr-3"><i class="fad fa-phone-alt"></i></span>
                             <div>
                                 <h6>Phone</h6>
-                                <p>+880172765933</p>
+                                <p>{{ $profile->phone }}</p>
                             </div>
                         </div>
 
                         <div class="contact_info d-flex flex-wrap align-items-center">
                             <span class="text-primary mr-3"><i class="fad fa-map-marked-alt"></i></span>
                             <div>
-                                <h6> Location</h6>
-                                <p>Dhaka, Bangladesh</p>
+                                <h6>Location</h6>
+                                <p>{{ $profile->location }}</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-8">
-                <form action="" method="POST">
+                <form action="{{ route('messages.store') }}" method="POST">
+                    @csrf
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="guest_name">Name<span class="text-danger">*</span></label>
-                            <input id="guest_name" name="guest_name" type="text" class="form-control form-control-lg input_short"
-                                   placeholder="">
+                            <input id="guest_name" name="guest_name" type="text" class="form-control form-control-lg input_short @error('guest_name') is-invalid @enderror" required>
+                            @error('guest_name')
+                                <p class="text-danger mb-0 mt-1">{{ $message }}</p>
+                            @enderror
                         </div>
                         <div class="form-group col-md-6">
                             <label for="guest_email">Email<span class="text-danger">*</span></label>
-                            <input id="guest_email" name="guest_email" type="email" class="form-control form-control-lg"
-                                   placeholder="">
+                            <input id="guest_email" name="guest_email" type="email" class="form-control form-control-lg @error('guest_email') is-invalid @enderror" required>
+                            @error('guest_email')
+                                <p class="text-danger mb-0 mt-1">{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="guest_subject">Subject</label>
-                        <input id="guest_subject" name="guest_subject" type="text" class="form-control form-control-lg" placeholder="">
+                        <input id="guest_subject" name="guest_subject" type="text" class="form-control form-control-lg @error('guest_subject') is-invalid @enderror">
+                        @error('guest_subject')
+                            <p class="text-danger mb-0 mt-1">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="guest_message">Message<span class="text-danger">*</span></label>
-                        <textarea id="guest_message" class="form-control form-control-lg" name="guest_message" rows="5"
-                                  placeholder=""></textarea>
+                        <textarea id="guest_message" class="form-control form-control-lg @error('guest_message') is-invalid @enderror" name="guest_message" rows="5" required></textarea>
+                        @error('guest_message')
+                            <p class="text-danger mb-0 mt-1">{{ $message }}</p>
+                        @enderror
                     </div>
 
                     <button class="btn btn-primary" type="submit" name="message_posted"><i class="fad fa-paper-plane"></i> Send</button>

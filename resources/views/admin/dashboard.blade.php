@@ -23,8 +23,8 @@
         <div class="col-md-6 col-lg-3">
             <div class="widget-small info coloured-icon"><i class="icon far fa-mailbox fa-3x"></i>
                 <div class="info">
-                    <h4>Mails</h4>
-                    <p><b>Total: 25</b></p>
+                    <h4>Messages</h4>
+                    <p><b>Total: {{ \App\Models\Message::where('read', 0)->count() }}</b></p>
                 </div>
             </div>
         </div>

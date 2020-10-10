@@ -17,7 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::group(['namespace' => 'Frontend'], function () {
 
     Route::get('/', 'PagesController@home')->name('home.page');
+
     Route::get('/portfolio', 'PagesController@portfolio')->name('portfolio.page');
+
+    Route::get('messages/{id}/read', 'MessagesController@read')->name('messages.read');
+    Route::resource('messages', 'MessagesController')->except(['update', 'edit', 'create']);
 
 });
 
@@ -35,4 +39,6 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth'], function () {
 
     Route::get('/profile', 'ProfileController@index')->name('profile');
     Route::post('/profile/update', 'ProfileController@update')->name('profile.update');
+
+    Route::resource('skills', 'SkillsController')->except('show');
 });

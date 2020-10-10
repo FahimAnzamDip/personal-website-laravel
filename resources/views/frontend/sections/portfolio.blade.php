@@ -33,12 +33,12 @@
                             </p>
                             <div class="portfolio-btns d-flex justify-content-center">
                                 @if($project->code_link)
-                                    <a href="{{ $project->code_link }}" class="portfolio-btn">
+                                    <a href="{{ $project->code_link }}" class="portfolio-btn" target="_blank">
                                         <i class="far fa-brackets-curly"></i> Code
                                     </a>
                                 @endif
                                 @if($project->live_link)
-                                    <a href="{{ $project->live_link }}" class="portfolio-btn">
+                                    <a href="{{ $project->live_link }}" class="portfolio-btn" target="_blank">
                                         <i class="far fa-link"></i> Live
                                     </a>
                                 @endif

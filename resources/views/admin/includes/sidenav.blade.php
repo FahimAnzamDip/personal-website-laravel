@@ -1,11 +1,14 @@
 <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
 <aside class="app-sidebar">
+    @php
+        $profile = \App\Models\Profile::select('full_name', 'profile_image')->first();
+    @endphp
     <div class="app-sidebar__user"><img width="50" class="app-sidebar__user-avatar"
-                                        src="https://i.ibb.co/ZYXnG3V/fahim-high.png"
+                                        src="{{ asset('storage/profile_image') . '/' . $profile->profile_image }}"
                                         alt="User Image">
         <div>
-            <p class="app-sidebar__user-name">Fahim Anzam</p>
-            <p class="app-sidebar__user-designation">Web Developer</p>
+            <p class="app-sidebar__user-name">{{ $profile->full_name }}</p>
+            <p class="app-sidebar__user-designation">{{ 'Web Developer' }}</p>
         </div>
     </div>
     <ul class="app-menu">
@@ -36,6 +39,18 @@
         <li>
             <a class="app-menu__item {{ (request()->is('projects*')) ? 'active' : '' }}" href="{{ route('projects.index') }}">
                 <i class="far fa-file-code app-menu__icon"></i><span class="app-menu__label">Projects</span>
+            </a>
+        </li>
+
+        <li>
+            <a class="app-menu__item {{ (request()->is('messages*')) ? 'active' : '' }}" href="{{ route('messages.index') }}">
+                <i class="far fa-mail-bulk app-menu__icon"></i><span class="app-menu__label">Messages <span class="badge badge-primary">{{ \App\Models\Message::where('read', 0)->count() }}</span></span>
+            </a>
+        </li>
+
+        <li>
+            <a class="app-menu__item {{ (request()->is('skills*')) ? 'active' : '' }}" href="{{ route('skills.index') }}">
+                <i class="far fa-code app-menu__icon"></i><span class="app-menu__label">Skills</span>
             </a>
         </li>
     </ul>

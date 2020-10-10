@@ -6,7 +6,7 @@
             </div>
             <div class="col-md-5">
                 <div class="about_img d-flex justify-content-center">
-                    <img style="margin-bottom: 30px;" width="350px" src="{{ asset('frontend') }}/img/fahim_low.png" alt="" class="img-fluid">
+                    <img style="margin-bottom: 30px;" width="350px" src="{{ asset('storage/profile_image') . '/' . $profile->profile_image }}" alt="profile image" class="img-fluid">
                 </div>
             </div>
             <div class="col-md-7">
@@ -34,30 +34,18 @@
                 </ul>
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="about_me">
-                        <p class="about_me_title">Hi I'm Full Stack Web Developer</p>
-                        <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore possimus
-                            cum esse aut alias sint at ut earum, quod quam, tempora sed fuga illum? A! Lorem ipsum
-                            dolor sit amet, consectetur adipisicing elit. Labore possimus cum esse aut alias sint at
-                            ut earum, quod quam, tempora sed fuga illum? A!</p>
+                        <p class="about_me_title">Hi I'm a {{ $profile->designation }}</p>
+                        <p class="mb-5">{{ $profile->profile_description }}</p>
                         <div class="about_me_btn">
-                            <a href="#" class="btn btn-outline-primary"> <i class="fad fa-file-user"></i> Download CV</a>
+                            <a href="{{ $profile->cv_link }}" class="btn btn-outline-primary"> <i class="fad fa-file-user"></i> Download CV</a>
                         </div>
                     </div>
 
                     <div class="tab-pane fade" id="skills">
                         <ul class="list-unstyled d-flex flex-wrap">
-                            <li><p><i class="fab fa-html5"></i> Html</p></li>
-                            <li><p><i class="fab fa-css3-alt"></i> Css</p></li>
-                            <li><p><i class="fab fa-sass"></i> Scss</p></li>
-                            <li><p><i class="fab fa-bootstrap"></i> Bootstrap</p></li>
-                            <li><p><i class="fab fa-js-square"></i> JavaScript</p></li>
-                            <li><p><i class="far fa-brackets-curly"></i> Jquery</p></li>
-                            <li><p><i class="fab fa-vuejs"></i> Vue js</p></li>
-                            <li><p><i class="fab fa-php"></i> Php</p></li>
-                            <li><p><i class="far fa-database"></i> Mysql</p></li>
-                            <li><p><i class="fab fa-laravel"></i> Laravel</p></li>
-                            <li><p><i class="fab fa-wordpress"></i> Wordpress</p></li>
-                            <li><p><i class="fab fa-git-alt"></i> Github</p></li>
+                            @foreach($skills as $skill)
+                                <li><p><i class="{{ $skill->skill_icon }}"></i> {{ $skill->skill_name }}</p></li>
+                            @endforeach
                         </ul>
                     </div>
 
