@@ -1,10 +1,8 @@
 @extends('frontend.layout.frontapp')
 
-
-<!--Nav Section-->
-@include('frontend.sections.nav')
-
 @section('page-content')
+    <!--Nav Section-->
+    @include('frontend.sections.nav')
 
     <!--Header Section-->
     @include('frontend.sections.header')
