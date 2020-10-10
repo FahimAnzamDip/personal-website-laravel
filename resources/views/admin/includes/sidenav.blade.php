@@ -32,7 +32,7 @@
 
         <li>
             <a class="app-menu__item {{ (request()->is('services*')) ? 'active' : '' }}" href="{{ route('services.index') }}">
-                <i class="far fa-ruler-triangle app-menu__icon"></i><span class="app-menu__label">Services</span>
+                <i class="far fa-bezier-curve app-menu__icon"></i><span class="app-menu__label">Services</span>
             </a>
         </li>
 
