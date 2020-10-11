@@ -24,10 +24,21 @@
                         </div>
 
                         <div class="contact_info mb-4 d-flex flex-wrap align-items-center">
-                            <span class="text-primary mr-3"><i class="fad fa-phone-alt"></i></span>
+                            <span class="text-primary mr-3"><i class="fad fa-comment-alt"></i></span>
                             <div>
-                                <h6>Phone</h6>
-                                <p>{{ $profile->phone }}</p>
+                                <h6>Social Media</h6>
+                                <ul class="d-flex list-unstyled">
+                                    @if($profile->facebook_link)
+                                        <li><a href="{{ $profile->facebook_link }}" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+                                    @endif
+                                    @if($profile->linkedin_link)
+                                        <li><a href="{{ $profile->linkedin_link }}" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                        </li>
+                                    @endif
+                                    @if($profile->twitter_link)
+                                        <li><a href="{{ $profile->twitter_link }}" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
+                                    @endif
+                                </ul>
                             </div>
                         </div>
 
