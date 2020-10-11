@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Message;
+use App\Models\User;
+use App\Notifications\MessageNofify;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class MessagesController extends Controller
@@ -58,7 +61,8 @@ class MessagesController extends Controller
             'guest_message' => $request->guest_message,
             'created_at'    => Carbon::now()
         ]);
-        Alert::success('Thank You!', 'I recieved your message. Will contact you soon.');
+        Notification::send(User::find(1)->first(), new MessageNofify());
+        Alert::success('Thank You!', 'I received your message. Will contact you soon.');
 
         return back();
     }

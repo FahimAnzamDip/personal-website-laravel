@@ -24,7 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2312dbcc-4c80-4047-a533-3bc1f38bc2ea" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/includes/sidenav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/includes/sidenav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/MessagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/MessagesController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +43,7 @@
     <setting file="file://$PROJECT_DIR$/resources/views/admin/layout/app.blade.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/resources/views/admin/auth/login.blade.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ServicesController.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/app/Notifications/MessageNofify.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ProjectsController.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/database/seeders/ProfileSeeder.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/CategoriesController.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
@@ -241,7 +242,8 @@
       <workItem from="1602252831640" duration="328000" />
       <workItem from="1602253199098" duration="1213000" />
       <workItem from="1602255435955" duration="12103000" />
-      <workItem from="1602313695872" duration="31945000" />
+      <workItem from="1602313695872" duration="37369000" />
+      <workItem from="1602401644787" duration="707000" />
     </task>
     <servers />
   </component>
