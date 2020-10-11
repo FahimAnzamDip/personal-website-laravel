@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Education;
 use App\Models\Experience;
 use App\Models\Profile;
 use App\Models\Project;
@@ -24,6 +25,7 @@ class PagesController extends Controller
         $skills = Skill::all();
         $stats = Stat::latest()->take(4)->get();
         $experiences = Experience::latest()->get();
+        $educations = Education::latest()->get();
 
         return view('frontend.home',
             [
@@ -34,7 +36,8 @@ class PagesController extends Controller
                 'profile'     => $profile,
                 'skills'      => $skills,
                 'stats'       => $stats,
-                'experiences' => $experiences
+                'experiences' => $experiences,
+                'educations'  => $educations
             ]);
     }
 

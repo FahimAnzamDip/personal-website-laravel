@@ -77,30 +77,25 @@
 
                     <div class="tab-pane fade" id="education">
                         <div class="row">
+                            @foreach($educations as $education)
                             <div class="col-lg-10 col-md-12 col-sm-12">
                                 <div class="card education mb-4">
                                     <div class="card-body education_body">
                                         <div class="education_details">
-                                            <h4>Web Development with Laravel</h4>
-                                            <span class="badge badge-primary mb-3">February - July 2020</span>
-                                            <p>I aquired professional training to develop web apps and website using Laravel.</p>
+                                            <h4>{{ $education->education_title }}</h4>
+                                            <span class="badge badge-primary mb-3">{{ date('F Y', strtotime($education->starting_date)) }} -
+                                                @if($education->ending_date)
+                                                    {{ date('F Y', strtotime($education->ending_date)) }}
+                                                @else
+                                                    {{ 'Running' }}
+                                                @endif</span>
+                                            <p>{{ $education->education_description }}</p>
                                         </div>
                                         <span class="line"></span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-10 col-md-12 col-sm-12">
-                                <div class="card education mb-4">
-                                    <div class="card-body education_body">
-                                        <div class="education_details">
-                                            <h4>Diploma In Engineering</h4>
-                                            <span class="badge badge-primary mb-3">2016 - 2020</span>
-                                            <p>I studied computer engineering in a polytechnic institute.</p>
-                                        </div>
-                                        <span class="line"></span>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
