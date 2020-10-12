@@ -24,7 +24,7 @@
                         </div>
 
                         <div class="contact_info mb-4 d-flex flex-wrap align-items-center">
-                            <span class="text-primary mr-3"><i class="fad fa-comment-alt"></i></span>
+                            <span class="text-primary mr-3"><i class="fad fa-comment-alt-lines"></i></span>
                             <div>
                                 <h6>Social Media</h6>
                                 <ul class="d-flex list-unstyled">
