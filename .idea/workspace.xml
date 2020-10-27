@@ -24,24 +24,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2312dbcc-4c80-4047-a533-3bc1f38bc2ea" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend/img/fahim_high.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend/img/fahim_low.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend/img/portfolio-img-1_high.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend/img/portfolio-img-1_low.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend/img/portfolio-img-2_high.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend/img/portfolio-img-2_low.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend/img/portfolio-img-3_high.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend/img/portfolio-img-3_low.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend/img/portfolio-img-4_high.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend/img/portfolio-img-4_low.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend/img/portfolio-img-5_high.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend/img/portfolio-img-5_low.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend/img/portfolio-img-6_high.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend/img/portfolio-img-6_low.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/portfolio.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/portfolio.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/sections/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/sections/contact.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/sections/portfolio.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/sections/portfolio.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -265,7 +247,9 @@
       <workItem from="1602427669791" duration="4560000" />
       <workItem from="1602439536631" duration="247000" />
       <workItem from="1602488529688" duration="218000" />
-      <workItem from="1602494940960" duration="1623000" />
+      <workItem from="1602494940960" duration="2220000" />
+      <workItem from="1602514169095" duration="17000" />
+      <workItem from="1602530019883" duration="176000" />
     </task>
     <servers />
   </component>

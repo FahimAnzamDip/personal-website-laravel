@@ -61,7 +61,10 @@ class MessagesController extends Controller
             'guest_message' => $request->guest_message,
             'created_at'    => Carbon::now()
         ]);
-        Notification::send(User::find(1)->first(), new MessageNofify());
+        
+        $user = User::first();
+        $user->notify(new MessageNofify());
+
         Alert::success('Thank You!', 'I received your message. Will contact you soon.');
 
         return back();
