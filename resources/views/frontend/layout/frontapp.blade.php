@@ -3,7 +3,7 @@
 
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180264261-1"></script>
+    <script async defer src="https://www.googletagmanager.com/gtag/js?id=UA-180264261-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -13,29 +13,32 @@
     </script>
 
     <meta charset="UTF-8">
-    <meta name="description" content="I am a full stack web developer. I do web design and web developent at efficient price point and on time.">
+    <link href="//fonts.googleapis.com" rel="preconnect" crossorigin>
+    <meta name="description" content="I am a full stack web developer. I do web design and web developent at efficient price and on time.">
+    <meta name="keywords" content="Web Design, Web Development, Ecommerce, Application, Software">
+    <meta name="author" content="Fahim Anzam Dip">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>{{ $title ?? config('app.name') }}</title>
 
     <!-- Google fonts for this template-->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!--Font Awesome CSS-->
-    <link rel="stylesheet" href="{{ asset('frontend/css/fontawesome.all.min.css') }}">
+    <link async defer rel="stylesheet" href="{{ asset('frontend/css/fontawesome.all.min.css') }}">
 
     <!--Animate CSS-->
-    <link rel="stylesheet" href="{{ asset('frontend/vendor/animate.css/animate.min.css') }}">
+    <link async defer  rel="stylesheet" href="{{ asset('frontend/vendor/animate.css/animate.min.css') }}">
 
     <!-- Owl Carousel CSS -->
-    <link rel="stylesheet" href="{{ asset('frontend/vendor/owl/css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend/vendor/owl/css/owl.theme.default.min.css') }}">
+    <link async defer rel="stylesheet" href="{{ asset('frontend/vendor/owl/css/owl.carousel.min.css') }}">
+    <link async defer rel="stylesheet" href="{{ asset('frontend/vendor/owl/css/owl.theme.default.min.css') }}">
 
     <!--Normalize CSS-->
     <link rel="stylesheet" href="{{ asset('frontend/css/normalize.css') }}">
 
     <!--Main CSS File-->
-    <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/style.min.css') }}">
 
     <!--Fav Icon-->
     <link rel="shortcut icon" href="{{ asset('frontend/img/favicon.png') }}"/>
@@ -67,7 +70,7 @@
     <script src="{{ asset('frontend/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
     <!-- Wow JS Scroll Animation-->
-    <script src="{{ asset('frontend/js/wow/wow.min.js') }}"></script>
+    <script async defer src="{{ asset('frontend/js/wow/wow.min.js') }}"></script>
 
     <!-- Waypoint JS -->
     <script src="{{ asset('frontend/vendor/waypoints/jquery.waypoints.min.js') }}"></script>
@@ -79,7 +82,7 @@
     <script src="{{ asset('frontend/js/counter/counter.min.js') }}"></script>
 
     <!--Isotope JS-->
-    <script src="{{ asset('frontend/js/isotope/isotope.min.js') }}"></script>
+    <script async defer src="{{ asset('frontend/js/isotope/isotope.min.js') }}"></script>
 
     <!-- Owl Carousel JS -->
     <script src="{{ asset('frontend/vendor/owl/js/owl.carousel.min.js') }}"></script>

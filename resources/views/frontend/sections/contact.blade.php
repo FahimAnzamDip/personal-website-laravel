@@ -58,14 +58,14 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="guest_name">Name<span class="text-danger">*</span></label>
-                            <input id="guest_name" name="guest_name" type="text" class="form-control form-control-lg input_short @error('guest_name') is-invalid @enderror" required>
+                            <input id="guest_name" name="guest_name" type="text" class="form-control form-control-lg input_short @error('guest_name') is-invalid @enderror" required placeholder="Enter your name">
                             @error('guest_name')
                                 <p class="text-danger mb-0 mt-1">{{ $message }}</p>
                             @enderror
                         </div>
                         <div class="form-group col-md-6">
                             <label for="guest_email">Email<span class="text-danger">*</span></label>
-                            <input id="guest_email" name="guest_email" type="email" class="form-control form-control-lg @error('guest_email') is-invalid @enderror" required>
+                            <input id="guest_email" name="guest_email" type="email" class="form-control form-control-lg @error('guest_email') is-invalid @enderror" required placeholder="Enter your email">
                             @error('guest_email')
                                 <p class="text-danger mb-0 mt-1">{{ $message }}</p>
                             @enderror
@@ -73,14 +73,14 @@
                     </div>
                     <div class="form-group">
                         <label for="guest_subject">Subject</label>
-                        <input id="guest_subject" name="guest_subject" type="text" class="form-control form-control-lg @error('guest_subject') is-invalid @enderror">
+                        <input id="guest_subject" name="guest_subject" type="text" class="form-control form-control-lg @error('guest_subject') is-invalid @enderror" placeholder="Enter subject">
                         @error('guest_subject')
                             <p class="text-danger mb-0 mt-1">{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="guest_message">Message<span class="text-danger">*</span></label>
-                        <textarea id="guest_message" class="form-control form-control-lg @error('guest_message') is-invalid @enderror" name="guest_message" rows="5" required></textarea>
+                        <textarea id="guest_message" class="form-control form-control-lg @error('guest_message') is-invalid @enderror" name="guest_message" rows="5" required placeholder="Enter your message"></textarea>
                         @error('guest_message')
                             <p class="text-danger mb-0 mt-1">{{ $message }}</p>
                         @enderror

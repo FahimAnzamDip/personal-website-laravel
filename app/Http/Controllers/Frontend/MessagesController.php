@@ -42,7 +42,7 @@ class MessagesController extends Controller
     public function store(Request $request) {
         $request->validate([
             'guest_name'    => 'required|max:190',
-            'guest_email'   => 'required|max:190',
+            'guest_email'   => 'required|email|max:190',
             'guest_subject' => 'nullable|max:190',
             'guest_message' => 'required'
         ], [
