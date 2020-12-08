@@ -28,7 +28,7 @@
     <link async defer rel="stylesheet" href="{{ asset('frontend/css/fontawesome.all.min.css') }}">
 
     <!--Animate CSS-->
-    <link async defer  rel="stylesheet" href="{{ asset('frontend/vendor/animate.css/animate.min.css') }}">
+    <link async defer rel="stylesheet" href="{{ asset('frontend/vendor/animate.css/animate.min.css') }}">
 
     <!-- Owl Carousel CSS -->
     <link async defer rel="stylesheet" href="{{ asset('frontend/vendor/owl/css/owl.carousel.min.css') }}">

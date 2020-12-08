@@ -37,7 +37,7 @@
                         <p class="about_me_title">Hi I'm a {{ $profile->designation }}</p>
                         <p class="mb-5">{{ $profile->profile_description }}</p>
                         <div class="about_me_btn">
-                            <a href="{{ $profile->cv_link }}" class="btn btn-outline-primary"> <i class="fad fa-file-user"></i> Download CV</a>
+                            <a target="_blank" href="{{ $profile->cv_link }}" class="btn btn-outline-primary"> <i class="fad fa-file-user"></i> Download CV</a>
                         </div>
                     </div>
 
