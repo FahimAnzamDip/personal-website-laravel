@@ -88,7 +88,7 @@
 
                     @php
                         $attributes = [
-                            'data-theme' => 'dark',
+                            'data-theme' => 'light',
                             'data-type' => 'audio',
                         ];
                     @endphp
