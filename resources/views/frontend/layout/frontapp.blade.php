@@ -18,6 +18,7 @@
     <meta name="keywords" content="Web Design, Web Development, Ecommerce, Application, Software">
     <meta name="author" content="Fahim Anzam Dip">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ $title ?? config('app.name') }}</title>
 
@@ -42,6 +43,8 @@
 
     <!--Fav Icon-->
     <link rel="shortcut icon" href="{{ asset('frontend/img/favicon.png') }}"/>
+
+    {!! htmlScriptTagJsApi([ 'action' => 'homepage' ]) !!}
 </head>
 
 <body id="home" data-spy="scroll" data-target=".navbar" data-offset="80">
