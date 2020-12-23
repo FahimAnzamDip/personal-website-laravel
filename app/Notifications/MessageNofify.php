@@ -11,14 +11,16 @@ class MessageNofify extends Notification implements ShouldQueue
 {
     use Queueable;
 
+    public $contactMessage;
+
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($contactMessage)
     {
-        //
+        $this->contactMessage = $contactMessage;
     }
 
     /**
@@ -41,10 +43,14 @@ class MessageNofify extends Notification implements ShouldQueue
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->subject('Portfolio Noitfication')
-                    ->line('Someone sent you a message!')
-                    ->action('View Message', url('/messages'))
-                    ->line('Have a great day! Thanks.');
+            ->greeting('Hi Fahim!')
+            ->subject('Portfolio - Message!')
+            ->line($this->contactMessage->name . " sent a message in your website.")
+            ->line("Email: " . $this->contactMessage->email)
+            ->line("Message: " . $this->contactMessage->message)
+            ->action('View Messages', url('/messages'))
+            ->line('Thank you! Have a nice day.')
+            ->replyTo($this->contactMessage->email);
     }
 
     /**

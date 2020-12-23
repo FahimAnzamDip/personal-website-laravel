@@ -23,7 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2312dbcc-4c80-4047-a533-3bc1f38bc2ea" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/sections/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/sections/contact.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Notifications/MessageNofify.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Notifications/MessageNofify.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,7 +252,7 @@
       <workItem from="1602514169095" duration="17000" />
       <workItem from="1602530019883" duration="176000" />
       <workItem from="1607433251676" duration="4084000" />
-      <workItem from="1608734787226" duration="5020000" />
+      <workItem from="1608734787226" duration="5534000" />
     </task>
     <servers />
   </component>
