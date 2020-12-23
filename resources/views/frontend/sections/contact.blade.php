@@ -86,6 +86,21 @@
                         @enderror
                     </div>
 
+                    @php
+                        $attributes = [
+                            'data-theme' => 'dark',
+                            'data-type' => 'audio',
+                        ];
+                    @endphp
+
+                    <div class="form-group">
+                        {!! app('captcha')->display($attributes) !!}
+                        @error('g-recaptcha-response')
+                            <p class="text-danger mb-0 mt-1">{{ $message }}</p>
+                        @enderror
+                    </div>
+
+
                     <button class="btn btn-primary" type="submit" name="message_posted"><i class="fad fa-paper-plane"></i> Send</button>
                 </form>
             </div>

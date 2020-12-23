@@ -44,7 +44,8 @@ class MessagesController extends Controller
             'guest_name'    => 'required|max:190',
             'guest_email'   => 'required|email|max:190',
             'guest_subject' => 'nullable|max:190',
-            'guest_message' => 'required'
+            'guest_message' => 'required',
+            'g-recaptcha-response' => 'required|captcha'
         ], [
             'guest_name.required'    => 'Please enter your name!',
             'guest_email.required'   => 'Please enter your valid email!',
@@ -52,6 +53,8 @@ class MessagesController extends Controller
             'guest_subject.max'      => 'Subject can\'t be that much long!',
             'guest_name.max'         => 'Your name can\'t be that much long!',
             'guest_email.max'        => 'Your email can\'t be that much long!',
+            'g-recaptcha-response.required' => 'Re-captcha is required!',
+            'g-recaptcha-response.captcha' => 'Something went wrong with the Re-captcha!'
         ]);
 
         Message::create([
@@ -61,7 +64,7 @@ class MessagesController extends Controller
             'guest_message' => $request->guest_message,
             'created_at'    => Carbon::now()
         ]);
-        
+
         $user = User::first();
         $user->notify(new MessageNofify());
 
