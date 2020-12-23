@@ -43,8 +43,6 @@
 
     <!--Fav Icon-->
     <link rel="shortcut icon" href="{{ asset('frontend/img/favicon.png') }}"/>
-
-    {!! htmlScriptTagJsApi([ 'action' => 'homepage' ]) !!}
 </head>
 
 <body id="home" data-spy="scroll" data-target=".navbar" data-offset="80">
