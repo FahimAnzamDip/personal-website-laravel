@@ -57,7 +57,7 @@ class MessagesController extends Controller
             'g-recaptcha-response.captcha' => 'Something went wrong with the Re-captcha!'
         ]);
 
-        Message::create([
+        $message = Message::create([
             'guest_name'    => $request->guest_name,
             'guest_email'   => $request->guest_email,
             'guest_subject' => $request->guest_subject,
@@ -66,7 +66,7 @@ class MessagesController extends Controller
         ]);
 
         $user = User::first();
-        $user->notify(new MessageNofify());
+        $user->notify(new MessageNofify($message));
 
         Alert::success('Thank You!', 'I received your message. Will contact you soon.');
 

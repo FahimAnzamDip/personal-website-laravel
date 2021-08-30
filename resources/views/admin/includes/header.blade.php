@@ -3,7 +3,7 @@
                                     aria-label="Hide Sidebar"></a>
     <!-- Navbar Right Menu-->
     <ul class="app-nav">
-        <li><a href="{{ route('home.page') }}" class="app-nav__item"><i class="far fa-eye fa-lg mr-2"></i> <strong>View Website</strong></a></li>
+        <li><a target="_blank" href="{{ route('home.page') }}" class="app-nav__item"><i class="far fa-eye fa-lg mr-2"></i> <strong>View Website</strong></a></li>
         <!--<li class="app-search">
             <input class="app-search__input" type="search" placeholder="Search">
             <button class="app-search__button"><i class="fa fa-search"></i></button>

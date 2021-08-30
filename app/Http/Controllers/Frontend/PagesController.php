@@ -20,7 +20,7 @@ class PagesController extends Controller
         $title = "Fahim Anzam";
         $categories = Category::all();
         $services = Service::all();
-        $projects = Project::all();
+        $projects = Project::latest()->take(6)->get();
         $profile = Profile::where('id', 1)->first();
         $skills = Skill::all();
         $stats = Stat::latest()->take(4)->get();
